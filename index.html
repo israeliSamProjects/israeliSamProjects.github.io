@@ -1,0 +1,1242 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Berner Coat Blowout</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=IBM+Plex+Mono:wght@500&display=swap">
+<style>
+/* Layout: one reading column; each grooming step is a collapsible card with a priority pill and a time check. Palette follows her coat: black, tan, white. */
+:root {
+  --bg: #f7f7f5;
+  --surface: #ffffff;
+  --surface-2: #f0efec;
+  --ink: #1c1b1a;
+  --muted: #625d57;
+  --line: #e2dfda;
+  --accent: #9c4f1c;
+  --accent-ink: #ffffff;
+  --accent-soft: #f6e8dd;
+  --tip: #2d5a78;
+  --tip-soft: #e8f0f5;
+  --warn: #a8322b;
+  --warn-soft: #f9eae8;
+  --ok: #2c6e49;
+  --ok-soft: #e6f2ea;
+  --skin: #e8b9a6;
+  --under: #a08e7e;
+  --f-display: "Bricolage Grotesque", "Avenir Next", "Segoe UI", system-ui, sans-serif;
+  --f-body: "Atkinson Hyperlegible", "Segoe UI", system-ui, -apple-system, sans-serif;
+  --f-mono: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, monospace;
+  --radius: 10px;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #131211; --surface: #1c1a19; --surface-2: #252220; --ink: #edebe7; --muted: #aaa39b; --line: #36322e;
+    --accent: #e39a62; --accent-ink: #1a1310; --accent-soft: #3a281b;
+    --tip: #95c3e1; --tip-soft: #1a2830; --warn: #f0958c; --warn-soft: #3a1e1b; --ok: #88d1a8; --ok-soft: #1a2c21;
+    --skin: #8a5d50; --under: #8f8276;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #131211; --surface: #1c1a19; --surface-2: #252220; --ink: #edebe7; --muted: #aaa39b; --line: #36322e;
+  --accent: #e39a62; --accent-ink: #1a1310; --accent-soft: #3a281b;
+  --tip: #95c3e1; --tip-soft: #1a2830; --warn: #f0958c; --warn-soft: #3a1e1b; --ok: #88d1a8; --ok-soft: #1a2c21;
+  --skin: #8a5d50; --under: #8f8276;
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--f-body);
+  font-size: 1.0625rem;
+  line-height: 1.6;
+  padding-inline: clamp(16px, 4vw, 32px);
+  padding-block: 0 64px;
+}
+.wrap { max-width: 46rem; margin-inline: auto; }
+h1, h2, h3, h4 { font-family: var(--f-display); text-wrap: balance; margin: 0; line-height: 1.2; }
+p { margin: 0; }
+a { color: var(--accent); text-underline-offset: 2px; }
+:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; border-radius: 4px; }
+.mono { font-family: var(--f-mono); font-size: 0.8125rem; font-variant-numeric: tabular-nums; }
+
+/* Header */
+header.hero { padding-block: 48px 24px; display: grid; gap: 14px; }
+.eyebrow { font-family: var(--f-mono); font-size: 0.75rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent); }
+h1 { font-size: clamp(2.2rem, 7vw, 3.4rem); font-weight: 800; letter-spacing: -0.02em; }
+.lede { font-size: 1.1875rem; color: var(--muted); max-width: 38rem; }
+.coat-stripe { display: flex; height: 8px; border-radius: 4px; overflow: hidden; max-width: 14rem; }
+.coat-stripe span:nth-child(1) { flex: 6; background: var(--ink); }
+.coat-stripe span:nth-child(2) { flex: 2; background: var(--accent); }
+.coat-stripe span:nth-child(3) { flex: 1.5; background: var(--surface); border: 1px solid var(--line); }
+
+section { margin-top: 40px; display: grid; gap: 16px; }
+h2 { font-size: 1.6rem; font-weight: 800; letter-spacing: -0.01em; }
+.section-intro { color: var(--muted); }
+
+/* Profile + kit */
+.profile { display: grid; grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr)); gap: 16px; }
+.card { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 18px 20px; display: grid; gap: 10px; align-content: start; min-width: 0; }
+.card h3 { font-size: 1.05rem; }
+.chips { display: flex; flex-wrap: wrap; gap: 6px; padding: 0; margin: 0; list-style: none; }
+.chips li { font-size: 0.875rem; padding: 3px 10px; border-radius: 999px; background: var(--surface-2); border: 1px solid var(--line); }
+.chips.extra li { background: transparent; border-style: dashed; color: var(--muted); }
+.small { font-size: 0.9375rem; color: var(--muted); }
+
+/* Coat diagram */
+.diagram { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 16px; display: grid; gap: 14px; }
+.diagram svg { width: 100%; height: auto; display: block; max-width: 100%; }
+.c-guard { stroke: var(--ink); stroke-width: 2; fill: none; stroke-linecap: round; }
+.c-under { stroke: var(--under); stroke-width: 1.6; fill: none; stroke-linecap: round; }
+.c-skin { fill: var(--skin); }
+.legend { display: grid; grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr)); gap: 12px; }
+.legend div { display: grid; grid-template-columns: 14px 1fr; gap: 10px; align-items: start; font-size: 0.9375rem; }
+.legend i { width: 14px; height: 14px; border-radius: 3px; margin-top: 5px; }
+.legend strong { display: block; }
+
+/* Rules */
+.rules { list-style: none; padding: 0; margin: 0; display: grid; gap: 10px; counter-reset: rule; }
+.rules li { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 12px 16px; display: grid; gap: 2px; }
+.rules strong { font-family: var(--f-display); font-size: 1.05rem; }
+
+/* Priority pills and tip tags */
+.prio, .tag { display: inline-block; font-family: var(--f-mono); font-size: 0.6875rem; letter-spacing: 0.05em; text-transform: uppercase; padding: 2px 8px; border-radius: 999px; white-space: nowrap; line-height: 1.6; vertical-align: 0.1em; }
+.p-crit, .t-key { background: var(--accent); color: var(--accent-ink); border: 1px solid var(--accent); }
+.p-worth, .t-helps { background: var(--accent-soft); color: var(--ink); border: 1px solid var(--accent); }
+.p-opt, .t-bonus { background: transparent; color: var(--muted); border: 1px dashed var(--muted); }
+.p-top { background: var(--ink); color: var(--bg); border: 1px solid var(--ink); }
+
+.legend-table { width: 100%; border-collapse: collapse; font-size: 0.9375rem; }
+.legend-table td { padding: 8px 10px; border-top: 1px solid var(--line); vertical-align: top; }
+.legend-table td:first-child { white-space: nowrap; width: 1%; }
+
+/* Time & priority map */
+.table-wrap { overflow-x: auto; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); }
+table.map { width: 100%; border-collapse: collapse; font-size: 0.9375rem; min-width: 30rem; }
+table.map th { text-align: left; font-family: var(--f-mono); font-size: 0.6875rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); padding: 10px 12px; border-bottom: 1px solid var(--line); font-weight: 500; }
+table.map td { padding: 8px 12px; border-bottom: 1px solid var(--line); vertical-align: middle; }
+table.map tr:last-child td { border-bottom: 0; }
+table.map td.n { font-family: var(--f-mono); color: var(--muted); width: 1%; font-variant-numeric: tabular-nums; }
+table.map td.t { font-family: var(--f-mono); font-size: 0.8125rem; white-space: nowrap; font-variant-numeric: tabular-nums; }
+table.map a { color: var(--ink); text-decoration-color: var(--line); }
+table.map a:hover { text-decoration-color: var(--accent); }
+table.map tfoot td { font-weight: 700; border-top: 2px solid var(--line); }
+
+.callouts { display: grid; grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr)); gap: 16px; }
+.callout { border-radius: var(--radius); padding: 16px 18px; display: grid; gap: 8px; align-content: start; min-width: 0; }
+.callout h3 { font-size: 1.05rem; }
+.callout ol, .callout ul { margin: 0; padding-left: 1.2rem; display: grid; gap: 4px; }
+.callout.top { background: var(--accent-soft); border: 1px solid var(--accent); }
+.callout.short { background: var(--tip-soft); border: 1px solid var(--tip); }
+
+/* Sticky toolbar */
+.toolbar {
+  position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5;
+  background: var(--bg); border-bottom: 1px solid var(--line);
+  margin-inline: calc(-1 * clamp(16px, 4vw, 32px)); padding: 10px clamp(16px, 4vw, 32px);
+}
+.toolbar-inner { max-width: 46rem; margin-inline: auto; display: flex; flex-wrap: wrap; gap: 8px 14px; align-items: center; }
+.progress { flex: 1 1 12rem; display: grid; gap: 4px; min-width: 0; }
+.progress-label { font-family: var(--f-mono); font-size: 0.75rem; color: var(--muted); font-variant-numeric: tabular-nums; }
+.bar { height: 6px; border-radius: 3px; background: var(--surface-2); overflow: hidden; border: 1px solid var(--line); }
+.bar span { display: block; height: 100%; width: 0; background: var(--ok); transition: width 0.3s ease; }
+.tool-btns { display: flex; gap: 6px; flex-wrap: wrap; }
+button {
+  font: inherit; font-size: 0.875rem; cursor: pointer; color: var(--ink);
+  background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 6px 12px;
+}
+button:hover { border-color: var(--accent); }
+
+/* Phases */
+.phase { display: flex; align-items: baseline; gap: 12px; margin-top: 28px; }
+.phase h3 { font-size: 1.15rem; }
+.phase .mono { color: var(--muted); }
+.phase::after { content: ""; flex: 1; border-bottom: 1px solid var(--line); transform: translateY(-4px); }
+
+/* Steps */
+.steps { display: grid; gap: 10px; }
+details.step, details.faq { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); }
+details.step[open], details.faq[open] { border-color: var(--muted); }
+details.step, details.faq { scroll-margin-top: 84px; }
+details > summary { list-style: none; cursor: pointer; }
+details > summary::-webkit-details-marker { display: none; }
+.step > summary {
+  display: grid; grid-template-columns: 2.25rem minmax(0, 1fr) auto 1.25rem;
+  gap: 4px 12px; align-items: center; padding: 14px 16px;
+}
+.num {
+  width: 2.25rem; height: 2.25rem; border-radius: 50%; display: grid; place-items: center;
+  font-family: var(--f-display); font-weight: 800; font-size: 1rem;
+  border: 2px solid var(--ink); color: var(--ink);
+}
+.step.is-done .num { background: var(--ok); border-color: var(--ok); color: var(--surface); font-size: 0; }
+.step.is-done .num::after { content: "✓"; font-size: 1.1rem; }
+.sum-main { display: grid; gap: 2px; min-width: 0; }
+.sum-title { font-family: var(--f-display); font-weight: 600; font-size: 1.125rem; line-height: 1.25; }
+.step.is-done .sum-title { color: var(--muted); }
+.sum-goal { font-size: 0.9375rem; color: var(--muted); line-height: 1.4; }
+.sum-meta { display: flex; flex-direction: column; align-items: flex-end; gap: 4px; }
+.sum-meta .time { font-family: var(--f-mono); font-size: 0.75rem; color: var(--muted); white-space: nowrap; font-variant-numeric: tabular-nums; }
+.chev { width: 0.6rem; height: 0.6rem; border-right: 2px solid var(--muted); border-bottom: 2px solid var(--muted); transform: rotate(45deg); justify-self: center; transition: transform 0.2s ease; margin-top: -4px; }
+details[open] > summary .chev { transform: rotate(-135deg); margin-top: 4px; }
+@media (max-width: 560px) {
+  .step > summary { grid-template-columns: 2.25rem minmax(0, 1fr) 1.25rem; }
+  .sum-meta { grid-column: 2; grid-row: 2; flex-direction: row; align-items: center; justify-content: flex-start; flex-wrap: wrap; }
+  .chev { grid-column: 3; grid-row: 1; }
+}
+
+.step-body { padding: 4px 20px 20px; display: grid; gap: 18px; border-top: 1px solid var(--line); padding-top: 18px; }
+.why { max-width: 40rem; }
+.timecheck { display: grid; grid-template-columns: repeat(auto-fit, minmax(11.5rem, 1fr)); gap: 10px; }
+.tc { border-radius: 8px; padding: 10px 12px; display: grid; gap: 4px; align-content: start; font-size: 0.9375rem; line-height: 1.5; min-width: 0; }
+.tc h4 { font-family: var(--f-mono); font-size: 0.6875rem; letter-spacing: 0.07em; text-transform: uppercase; font-weight: 500; }
+.tc-little { background: var(--warn-soft); }
+.tc-little h4 { color: var(--warn); }
+.tc-much { background: var(--tip-soft); }
+.tc-much h4 { color: var(--tip); }
+.tc-move { background: var(--ok-soft); }
+.tc-move h4 { color: var(--ok); }
+h4.sub { font-size: 1rem; font-weight: 600; }
+.block { display: grid; gap: 8px; }
+ol.how { margin: 0; padding-left: 1.4rem; display: grid; gap: 6px; }
+ol.how li::marker { font-family: var(--f-mono); color: var(--accent); font-size: 0.875rem; }
+.part { display: block; margin-left: -1.4rem; font-family: var(--f-mono); font-size: 0.75rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--accent); margin-top: 6px; }
+ul.tips { list-style: none; padding: 0; margin: 0; display: grid; gap: 8px; }
+ul.tips li { display: grid; grid-template-columns: 4.6rem minmax(0, 1fr); gap: 10px; align-items: start; }
+ul.tips .tag { justify-self: start; margin-top: 3px; }
+.avoid { border-left: 3px solid var(--warn); padding: 4px 0 4px 14px; display: grid; gap: 4px; }
+.avoid h4 { font-family: var(--f-mono); font-size: 0.6875rem; letter-spacing: 0.07em; text-transform: uppercase; color: var(--warn); font-weight: 500; }
+.step-actions { display: flex; justify-content: flex-end; }
+.done-btn { background: var(--ok); color: var(--surface); border-color: var(--ok); font-weight: 700; }
+.done-btn:hover { border-color: var(--ink); }
+.step.is-done .done-btn { background: var(--surface); color: var(--muted); border-color: var(--line); font-weight: 400; }
+
+/* FAQ / extras */
+.faq > summary { padding: 14px 16px; display: grid; grid-template-columns: minmax(0, 1fr) 1.25rem; gap: 12px; align-items: center; font-family: var(--f-display); font-weight: 600; font-size: 1.0625rem; }
+.faq-body { padding: 16px 20px 20px; border-top: 1px solid var(--line); display: grid; gap: 12px; }
+.faq-body ul, .faq-body ol { margin: 0; padding-left: 1.2rem; display: grid; gap: 6px; }
+table.sched { width: 100%; border-collapse: collapse; font-size: 0.9375rem; min-width: 30rem; }
+table.sched th { text-align: left; font-family: var(--f-mono); font-size: 0.6875rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); padding: 8px 10px; border-bottom: 1px solid var(--line); font-weight: 500; }
+table.sched td { padding: 8px 10px; border-bottom: 1px solid var(--line); vertical-align: top; }
+table.sched tr:last-child td { border-bottom: 0; }
+.sched-wrap { overflow-x: auto; }
+
+.sources ol { margin: 0; padding-left: 1.4rem; display: grid; gap: 4px; font-size: 0.9375rem; }
+footer { margin-top: 48px; color: var(--muted); font-size: 0.875rem; }
+
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; scroll-behavior: auto !important; }
+}
+</style>
+
+<div class="wrap">
+<header class="hero">
+  <span class="eyebrow">At-home deshed &amp; groom</span>
+  <h1>Berner Coat Blowout</h1>
+  <p class="lede">A full groomer-style deshed for a black, tan and white mix with a heavy Bernese-type double coat, using only the tools you already have. Every step and tip is marked by how much it matters, so you know where to spend your time.</p>
+  <div class="coat-stripe" aria-hidden="true"><span></span><span></span><span></span></div>
+</header>
+
+<section aria-labelledby="h-dog">
+  <h2 id="h-dog">Her coat and your kit</h2>
+  <div class="profile">
+    <div class="card">
+      <h3>Her coat</h3>
+      <p class="small">Dense double coat. Long, shiny black guard hairs sit over a thick, soft undercoat. Feathering on the ears, chest, legs, the "britches" on the back of the thighs, and the tail. Sheds hardest in spring and fall, when she "blows" her coat.</p>
+    </div>
+    <div class="card">
+      <h3>Your tools</h3>
+      <ul class="chips">
+        <li>Slicker brush</li><li>Metal comb, coarse + fine</li><li>High-velocity dryer</li><li>Dog shampoo</li><li>Dog conditioner</li><li>Towel</li><li>Scissors</li><li>Coconut oil</li>
+      </ul>
+      <p class="small">Cheap extras that help:</p>
+      <ul class="chips extra">
+        <li>Cotton balls</li><li>Non-slip mat</li><li>Drain hair catcher</li><li>Second towel</li><li>Face mask</li><li>Grooming treats</li><li>Lick mat</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="diagram">
+    <svg id="coat" viewBox="0 0 640 180" role="img" aria-label="Cross-section of a double coat: long guard hairs rise from the skin above a dense layer of short, curly undercoat.">
+      <rect class="c-skin" x="0" y="150" width="640" height="30"/>
+    </svg>
+    <div class="legend">
+      <div><i style="background: var(--ink)"></i><span><strong>Guard hairs</strong>Long and shiny. Shed water and block sun. Never cut short.</span></div>
+      <div><i style="background: var(--under)"></i><span><strong>Undercoat</strong>Short, soft, packed fluff. This is what sheds in clouds. Your job is getting it out.</span></div>
+      <div><i style="background: var(--skin)"></i><span><strong>Skin</strong>Thin and easy to scrape or nick. Must dry fully after every bath.</span></div>
+    </div>
+  </div>
+</section>
+
+<section aria-labelledby="h-rules">
+  <h2 id="h-rules">Five rules that matter most</h2>
+  <ol class="rules">
+    <li><strong>Never shave her.</strong><span class="small">Shaving damages the guard hairs, ruins her insulation and sun protection, and the coat often grows back patchy. Deshedding removes dead undercoat only.</span></li>
+    <li><strong>Clean first, brush after.</strong><span class="small">Bath, blowout, then the real brushing. A clean, conditioned coat lets go of undercoat far more easily than a dirty one.</span></li>
+    <li><strong>Dry to the skin, every time.</strong><span class="small">Damp undercoat trapped against the skin causes hot spots. Your fingertips decide when she's dry, not your eyes.</span></li>
+    <li><strong>Brush the hair, not the skin.</strong><span class="small">Light pressure, and let the pins do the work. Hard brushing causes brush burn.</span></li>
+    <li><strong>Stop before she's had enough.</strong><span class="small">Short, happy sessions beat one long fight. You can split the groom over two days.</span></li>
+  </ol>
+</section>
+
+<section aria-labelledby="h-prio">
+  <h2 id="h-prio">How to read the priority labels</h2>
+  <div class="table-wrap">
+    <table class="legend-table">
+      <tbody>
+        <tr><td><span class="prio p-crit">Never skip</span></td><td>Skipping or rushing this step causes real problems: mats, hot spots, itchy skin, or a deshed that doesn't work.</td></tr>
+        <tr><td><span class="prio p-worth">Worth it</span></td><td>Makes the result clearly better or the job easier. Do it unless she's done for the day.</td></tr>
+        <tr><td><span class="prio p-opt">Optional</span></td><td>Nice finishing touch. Skip it without guilt when short on time.</td></tr>
+        <tr><td><span class="prio p-top">Biggest payoff</span></td><td>The three steps that decide how well the deshed works. Spend your time and patience here.</td></tr>
+        <tr><td><span class="tag t-key">Key</span> <span class="tag t-helps">Helps</span> <span class="tag t-bonus">Bonus</span></td><td>The same three levels for individual tips inside each step.</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="small">Each step also has a time check. <strong>Too little</strong> shows what happens if you rush it. <strong>Too much</strong> shows where people waste time. <strong>Move on when</strong> tells you exactly when that step is finished.</p>
+</section>
+
+<section aria-labelledby="h-map">
+  <h2 id="h-map">Where your time goes</h2>
+  <div class="table-wrap">
+    <table class="map">
+      <thead><tr><th>#</th><th>Step</th><th>Priority</th><th>Time</th></tr></thead>
+      <tbody>
+        <tr><td class="n">1</td><td><a href="#s1">Get her used to the dryer</a></td><td><span class="prio p-worth">Worth it</span></td><td class="t">5 min/day, days before</td></tr>
+        <tr><td class="n">2</td><td><a href="#s2">Set up your space</a></td><td><span class="prio p-worth">Worth it</span></td><td class="t">15 min</td></tr>
+        <tr><td class="n">3</td><td><a href="#s3">Nose-to-tail check</a></td><td><span class="prio p-crit">Never skip</span></td><td class="t">5 min</td></tr>
+        <tr><td class="n">4</td><td><a href="#s4">Quick pre-brush</a></td><td><span class="prio p-worth">Worth it</span></td><td class="t">10–15 min</td></tr>
+        <tr><td class="n">5</td><td><a href="#s5">Work out mats</a></td><td><span class="prio p-crit">Never skip</span></td><td class="t">0–30 min</td></tr>
+        <tr><td class="n">6</td><td><a href="#s6">Wet to the skin</a></td><td><span class="prio p-crit">Never skip</span></td><td class="t">5–10 min</td></tr>
+        <tr><td class="n">7</td><td><a href="#s7">Shampoo twice</a></td><td><span class="prio p-crit">Never skip</span></td><td class="t">10–15 min</td></tr>
+        <tr><td class="n">8</td><td><a href="#s8">Rinse until squeaky</a></td><td><span class="prio p-top">Biggest payoff</span></td><td class="t">10–15 min</td></tr>
+        <tr><td class="n">9</td><td><a href="#s9">Condition and loosen</a></td><td><span class="prio p-worth">Worth it</span></td><td class="t">10 min</td></tr>
+        <tr><td class="n">10</td><td><a href="#s10">Squeeze and towel</a></td><td><span class="prio p-worth">Worth it</span></td><td class="t">5 min</td></tr>
+        <tr><td class="n">11</td><td><a href="#s11">High-velocity blowout</a></td><td><span class="prio p-top">Biggest payoff</span></td><td class="t">30–60 min</td></tr>
+        <tr><td class="n">12</td><td><a href="#s12">Line brush</a></td><td><span class="prio p-top">Biggest payoff</span></td><td class="t">30–60 min</td></tr>
+        <tr><td class="n">13</td><td><a href="#s13">Comb check</a></td><td><span class="prio p-crit">Never skip</span></td><td class="t">10–20 min</td></tr>
+        <tr><td class="n">14</td><td><a href="#s14">Ears, eyes and skin</a></td><td><span class="prio p-worth">Worth it</span></td><td class="t">5 min</td></tr>
+        <tr><td class="n">15</td><td><a href="#s15">Scissor tidy</a></td><td><span class="prio p-opt">Optional</span></td><td class="t">15–30 min</td></tr>
+        <tr><td class="n">16</td><td><a href="#s16">Coconut oil finish</a></td><td><span class="prio p-opt">Optional</span></td><td class="t">5 min</td></tr>
+        <tr><td class="n">17</td><td><a href="#s17">Clean up and tool care</a></td><td><span class="prio p-worth">Worth it</span></td><td class="t">10 min</td></tr>
+      </tbody>
+      <tfoot><tr><td></td><td>Full bath-day groom</td><td></td><td class="t">2.5–4 hours</td></tr></tfoot>
+    </table>
+  </div>
+  <div class="callouts">
+    <div class="callout top">
+      <h3>Spend your patience here</h3>
+      <ol>
+        <li><strong>Rinsing.</strong> Leftover shampoo is the top cause of itching and flakes after a home bath.</li>
+        <li><strong>The blowout.</strong> It removes more undercoat than any brush, and it's what dries her to the skin.</li>
+        <li><strong>Line brushing plus the comb check.</strong> Surface brushing is why home-groomed double coats mat underneath.</li>
+      </ol>
+      <p class="small">Together these are about half the total time. That's the right balance.</p>
+    </div>
+    <div class="callout short">
+      <h3>Short on time?</h3>
+      <ul>
+        <li><strong>About an hour, no bath:</strong> a dry blowout on a clean, dry coat, then line brush the mat zones and comb check. This gets most of the loose undercoat out.</li>
+        <li><strong>Bath day in a hurry:</strong> do only the steps marked Never skip and Biggest payoff. Skip the pre-brush, scissors and coconut oil.</li>
+        <li><strong>Split it:</strong> mats and pre-brush one day. Bath, blowout and brush-out the next.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section aria-labelledby="h-steps">
+  <h2 id="h-steps">The steps</h2>
+  <p class="section-intro">Tap a step to open it. "Done, open next step" ticks it off, closes it and opens the next one. Your progress is saved in this browser.</p>
+</section>
+
+<div class="toolbar" role="region" aria-label="Progress">
+  <div class="toolbar-inner">
+    <div class="progress">
+      <span class="progress-label" id="progress-label">0 of 17 steps done</span>
+      <div class="bar" aria-hidden="true"><span id="progress-bar"></span></div>
+    </div>
+    <div class="tool-btns">
+      <button type="button" id="expand-all">Open all</button>
+      <button type="button" id="collapse-all">Close all</button>
+      <button type="button" id="reset">Reset progress</button>
+    </div>
+  </div>
+</div>
+
+<div class="steps">
+
+<div class="phase"><h3>Days before</h3><span class="mono">3 to 7 days ahead</span></div>
+
+<details class="step" id="s1">
+  <summary>
+    <span class="num">1</span>
+    <span class="sum-main"><span class="sum-title">Get her used to the dryer</span><span class="sum-goal">Teach her that the dryer noise means treats, before bath day.</span></span>
+    <span class="sum-meta"><span class="prio p-worth">Worth it</span><span class="time">5 min a day</span></span>
+    <span class="chev" aria-hidden="true"></span>
+  </summary>
+  <div class="step-body">
+    <p class="why"><strong>Why it matters.</strong> The blowout is the most important step, and high-velocity dryers are loud. A dog that panics will fight you, and you'll quit before the undercoat is out. A few short sessions now save an hour of struggle later. If she has never met the dryer, treat this step as Never skip. If she already ignores it, skip it.</p>
+    <div class="timecheck">
+      <div class="tc tc-little"><h4>Too little</h4><p>Going straight to full power on bath day teaches her the dryer is scary. That fear gets worse each time.</p></div>
+      <div class="tc tc-much"><h4>Too much</h4><p>Long sessions. Keep each one to 5 or 10 minutes and stop while she's still happy.</p></div>
+      <div class="tc tc-move"><h4>Move on when</h4><p>She stays loose and keeps taking treats while the dryer blows on her rump at low speed.</p></div>
+    </div>
+    <div class="block">
+      <h4 class="sub">How to do it</h4>
+      <ol class="how">
+        <li><strong>Day 1.</strong> Put the dryer on the floor, switched off. Let her sniff it. Give treats near it. Leave the hose lying around.</li>
+        <li><strong>Day 2.</strong> Turn it on at the lowest speed across the room, pointed away from her. Feed treats steadily while it runs. The treats stop when the dryer stops.</li>
+        <li><strong>Day 3.</strong> Pick up the hose and move it slowly while it runs, still aimed away. Keep the treats coming.</li>
+        <li><strong>Day 4.</strong> Give a short puff of air on her back legs or rump from a distance, at the lowest speed. Treat, then turn it off.</li>
+        <li><strong>Next days.</strong> Build up to a minute of air on her body, moving from the rump forward. Never at the face.</li>
+      </ol>
+    </div>
+    <div class="block">
+      <h4 class="sub">Tips</h4>
+      <ul class="tips">
+        <li><span class="tag t-key">Key</span><span>Treats flow only while the dryer runs. That link is what turns the noise into something good.</span></li>
+        <li><span class="tag t-key">Key</span><span>If she tries to leave, go back one step. Pushing through panic undoes days of work.</span></li>
+        <li><span class="tag t-helps">Helps</span><span>Use special treats she only gets at grooming time, like small bits of cooked chicken or cheese.</span></li>
+        <li><span class="tag t-helps">Helps</span><span>Smear peanut butter on a lick mat or the side of the tub. Licking calms dogs and keeps the head still. Check the label for xylitol, which is toxic to dogs.</span></li>
+        <li><span class="tag t-helps">Helps</span><span>Tuck a cotton ball loosely in each ear, never pushed deep, and wrap a folded towel around her head like a snood. Both muffle the noise.</span></li>
+        <li><span class="tag t-bonus">Bonus</span><span>For a very nervous dog, start with a recording of a dryer played softly before using the real one.</span></li>
+      </ul>
+    </div>
+    <div class="avoid"><h4>Avoid</h4><p>Starting at full power. Pointing air at her face. Forcing her through fear.</p></div>
+    <div class="step-actions"><button type="button" class="done-btn">Done, open next step</button></div>
+  </div>
+</details>
+
+<div class="phase"><h3>Bath day: prep</h3><span class="mono">about 30–60 min</span></div>
+
+<details class="step" id="s2">
+  <summary>
+    <span class="num">2</span>
+    <span class="sum-main"><span class="sum-title">Set up your space</span><span class="sum-goal">Everything within arm's reach, non-slip footing, and a plan for the fur.</span></span>
+    <span class="sum-meta"><span class="prio p-worth">Worth it</span><span class="time">15 min</span></span>
+    <span class="chev" aria-hidden="true"></span>
+  </summary>
+  <div class="step-body">
+    <p class="why"><strong>Why it matters.</strong> The blowout throws out an amazing amount of fur and spray. With everything in reach you never leave a wet dog alone or hunt for the comb halfway through.</p>
+    <div class="timecheck">
+      <div class="tc tc-little"><h4>Too little</h4><p>You end up running for a towel while she shakes water and fur all over the house.</p></div>
+      <div class="tc tc-much"><h4>Too much</h4><p>You don't need a fancy setup. Non-slip footing, a leash and your tools in reach are what matter.</p></div>
+      <div class="tc tc-move"><h4>Move on when</h4><p>Everything is laid out within arm's reach and the floor under her won't slip.</p></div>
+    </div>
+    <div class="block">
+      <h4 class="sub">How to do it</h4>
+      <ol class="how">
+        <li><strong>Pick the spots.</strong> Bathe in a tub, shower, or outside with lukewarm water. Do the blowout outside on a calm, dry day if you can, or in a bathroom with the door closed.</li>
+        <li>Put a non-slip mat or folded towel in the tub and on the drying spot. Slipping scares dogs more than water does.</li>
+        <li>Cover the drain with a hair catcher. Undercoat clogs drains fast.</li>
+        <li>Pre-mix the shampoo and the conditioner in separate bottles or jugs. Ratios are in steps 7 and 9.</li>
+        <li>Lay out the slicker, comb, scissors, towels, coconut oil, treats and leash.</li>
+        <li>Wear old clothes. Have a face mask ready for the blowout, because loose undercoat floats everywhere.</li>
+        <li>Walk her first so she's calmer and has peed. Don't bathe right after a big meal.</li>
+      </ol>
+    </div>
+    <div class="block">
+      <h4 class="sub">Tips</h4>
+      <ul class="tips">
+        <li><span class="tag t-key">Key</span><span>Never tie her up and walk away, not even for a second. A leashed dog that slips in a tub can choke.</span></li>
+        <li><span class="tag t-helps">Helps</span><span>A second towel makes a big difference. Old bath towels are fine.</span></li>
+        <li><span class="tag t-helps">Helps</span><span>Block out 2.5 to 4 hours for the first full deshed. Later ones go faster as her coat stays on top of it.</span></li>
+        <li><span class="tag t-bonus">Bonus</span><span>Outside, stand upwind. A light breeze carries the flying fur away from you.</span></li>
+      </ul>
+    </div>
+    <div class="avoid"><h4>Avoid</h4><p>Bathing on a cold or damp day unless you can dry her fully indoors.</p></div>
+    <div class="step-actions"><button type="button" class="done-btn">Done, open next step</button></div>
+  </div>
+</details>
+
+<details class="step" id="s3">
+  <summary>
+    <span class="num">3</span>
+    <span class="sum-main"><span class="sum-title">Nose-to-tail check</span><span class="sum-goal">Feel to the skin everywhere for mats, sore spots, ticks and lumps.</span></span>
+    <span class="sum-meta"><span class="prio p-crit">Never skip</span><span class="time">5 min</span></span>
+    <span class="chev" aria-hidden="true"></span>
+  </summary>
+  <div class="step-body">
+    <p class="why"><strong>Why it matters.</strong> Shampoo stings broken skin, and the dryer and brush can hurt sore spots. A hot spot or tick hidden under a mat is easy to miss once she's wet. Five minutes here protects everything that follows.</p>
+    <div class="timecheck">
+      <div class="tc tc-little"><h4>Too little</h4><p>You find a sore spot by blasting it with the dryer or raking it with the slicker.</p></div>
+      <div class="tc tc-much"><h4>Too much</h4><p>This is a quick feel-and-look, not a vet exam. Five minutes is enough.</p></div>
+      <div class="tc tc-move"><h4>Move on when</h4><p>You've felt every part of her to the skin and know where any mats or sore spots are.</p></div>
+    </div>
+    <div class="block">
+      <h4 class="sub">How to do it</h4>
+      <ol class="how">
+        <li>Run your fingertips through the coat to the skin, all over, against the grain.</li>
+        <li>Feel for mats, lumps, scabs, ticks, and warm, damp or sore patches.</li>
+        <li>Part the coat in a few places and look at the skin. Watch for redness, flakes, or black specks, which can be flea dirt.</li>
+        <li>Check the mat zones: behind the ears, under the collar, armpits, the britches, the base of the tail, and the leg feathering.</li>
+        <li>Look in and sniff the ears. Look at the pads and between the toes.</li>
+      </ol>
+    </div>
+    <div class="block">
+      <h4 class="sub">Tips</h4>
+      <ul class="tips">
+        <li><span class="tag t-key">Key</span><span>A hot spot is a red, wet, sore patch. Keep shampoo and the dryer off it and call your vet.</span></li>
+        <li><span class="tag t-helps">Helps</span><span>Count the mats you find. That tells you how long step 5 will take.</span></li>
+        <li><span class="tag t-helps">Helps</span><span>Repeat this every time you brush. You'll learn her normal and notice new lumps early.</span></li>
+      </ul>
+    </div>
+    <div class="avoid"><h4>Avoid</h4><p>Bathing over open wounds or angry, inflamed skin.</p></div>
+    <div class="step-actions"><button type="button" class="done-btn">Done, open next step</button></div>
+  </div>
+</details>
+
+<details class="step" id="s4">
+  <summary>
+    <span class="num">4</span>
+    <span class="sum-main"><span class="sum-title">Quick pre-brush</span><span class="sum-goal">One fast pass to clear loose fur and debris and find tangles.</span></span>
+    <span class="sum-meta"><span class="prio p-worth">Worth it</span><span class="time">10–15 min</span></span>
+    <span class="chev" aria-hidden="true"></span>
+  </summary>
+  <div class="step-body">
+    <p class="why"><strong>Why it matters.</strong> The real brushing comes after the bath, on a clean coat. But a quick pass now removes loose surface fur and debris so water reaches the skin, and it shows you where the tangles are.</p>
+    <div class="timecheck">
+      <div class="tc tc-little"><h4>Too little</h4><p>Skipping it means water locks small tangles into tight mats.</p></div>
+      <div class="tc tc-much"><h4>Too much</h4><p>This is where people waste the most time. A dirty coat fights the brush and dulls your tools. Don't try to get the undercoat out yet.</p></div>
+      <div class="tc tc-move"><h4>Move on when</h4><p>You've done one pass over the whole body and found every tangle.</p></div>
+    </div>
+    <div class="block">
+      <h4 class="sub">How to do it</h4>
+      <ol class="how">
+        <li>Slicker over the whole body in the direction the hair grows, with light "pat and pull" strokes. Step 12 explains the stroke.</li>
+        <li>Run the coarse comb through the mat zones to find hidden tangles.</li>
+        <li>Pick out burrs, leaves and anything stuck in the feet and britches.</li>
+      </ol>
+    </div>
+    <div class="block">
+      <h4 class="sub">Tips</h4>
+      <ul class="tips">
+        <li><span class="tag t-key">Key</span><span>One pass only. The bath and blowout loosen undercoat far better than dry brushing.</span></li>
+        <li><span class="tag t-bonus">Bonus</span><span>If static makes the fur fly, mist the coat lightly with water first.</span></li>
+      </ul>
+    </div>
+    <div class="avoid"><h4>Avoid</h4><p>Hard scrubbing with the slicker on a dry, dirty coat.</p></div>
+    <div class="step-actions"><button type="button" class="done-btn">Done, open next step</button></div>
+  </div>
+</details>
+
+<details class="step" id="s5">
+  <summary>
+    <span class="num">5</span>
+    <span class="sum-main"><span class="sum-title">Work out mats</span><span class="sum-goal">Loosen or split every mat before it touches water.</span></span>
+    <span class="sum-meta"><span class="prio p-crit">Never skip</span><span class="time">0–30 min</span></span>
+    <span class="chev" aria-hidden="true"></span>
+  </summary>
+  <div class="step-body">
+    <p class="why"><strong>Why it matters.</strong> Water shrinks and tightens mats. Shampoo trapped inside them sits on the skin and itches, and the skin under a mat won't dry. A mat that's annoying now becomes a felt pad after the bath. If she has no mats, skip ahead.</p>
+    <div class="timecheck">
+      <div class="tc tc-little"><h4>Too little</h4><p>Bathing over mats makes them tighter, harder to remove, and keeps the skin under them damp.</p></div>
+      <div class="tc tc-much"><h4>Too much</h4><p>About 5 minutes per mat at most. If one won't loosen, split it with scissors instead of tugging. Large, tight mats against the skin are a job for a groomer.</p></div>
+      <div class="tc tc-move"><h4>Move on when</h4><p>The coarse comb slides through every former mat down to the skin.</p></div>
+    </div>
+    <div class="block">
+      <h4 class="sub">How to do it</h4>
+      <ol class="how">
+        <li>Hold the mat at its base, between the mat and the skin, so any pulling goes into your fingers and not her skin.</li>
+        <li>Rub a little coconut oil or undiluted conditioner into the mat to make it slippery.</li>
+        <li>Tease it apart with your fingers from the outer edge, a few hairs at a time.</li>
+        <li>Pick at the edges with the end tooth of the coarse comb, working from the tips toward the skin.</li>
+        <li>Finish with short, light slicker strokes over the loosened area.</li>
+        <li><strong>If it won't budge, split it.</strong> Slide the comb flat between the mat and the skin, then cut only on top of the comb. Or push one open scissor blade through the mat at its base and cut outward, away from the skin and parallel to her body. This splits the mat into thin strips you can comb out.</li>
+      </ol>
+    </div>
+    <div class="block">
+      <h4 class="sub">Tips</h4>
+      <ul class="tips">
+        <li><span class="tag t-key">Key</span><span>Always keep the comb or your fingers between the scissors and her skin. Mats pull the skin up into a tent, and it's very easy to cut right through it.</span></li>
+        <li><span class="tag t-key">Key</span><span>Never cut toward the skin, and never cut where you can't see the blade.</span></li>
+        <li><span class="tag t-helps">Helps</span><span>Splitting a mat into strips first makes combing it out much faster than fighting the whole thing.</span></li>
+        <li><span class="tag t-helps">Helps</span><span>Work in short bursts with treats. Mats behind the ears are tender.</span></li>
+      </ul>
+    </div>
+    <div class="avoid"><h4>Avoid</h4><p>Yanking. Cutting a mat off at the base with pointed scissors. Trying to save a large, pelted area at home.</p></div>
+    <div class="step-actions"><button type="button" class="done-btn">Done, open next step</button></div>
+  </div>
+</details>
+
+<div class="phase"><h3>The bath</h3><span class="mono">about 40–55 min</span></div>
+
+<details class="step" id="s6">
+  <summary>
+    <span class="num">6</span>
+    <span class="sum-main"><span class="sum-title">Wet to the skin</span><span class="sum-goal">Soak through the undercoat, not just the top layer.</span></span>
+    <span class="sum-meta"><span class="prio p-crit">Never skip</span><span class="time">5–10 min</span></span>
+    <span class="chev" aria-hidden="true"></span>
+  </summary>
+  <div class="step-body">
+    <p class="why"><strong>Why it matters.</strong> A dense double coat is built to keep water out. If the undercoat isn't soaked, shampoo can't reach the skin or spread, and rinsing takes twice as long.</p>
+    <div class="timecheck">
+      <div class="tc tc-little"><h4>Too little</h4><p>The coat looks wet but the skin is dry. This is the most common bath mistake with thick coats.</p></div>
+      <div class="tc tc-much"><h4>Too much</h4><p>Once you feel water on the skin everywhere, start shampooing.</p></div>
+      <div class="tc tc-move"><h4>Move on when</h4><p>You can part the fur on her back, thighs and chest and see wet skin.</p></div>
+    </div>
+    <div class="block">
+      <h4 class="sub">How to do it</h4>
+      <ol class="how">
+        <li>Test the water on your inner wrist. Lukewarm or slightly cool is right. Dogs run warmer than us, and heavy coats overheat.</li>
+        <li>Start at the back legs and rump and work forward. Wet the head last, since a wet head makes her shake.</li>
+        <li>Hold the sprayer close to the coat and lift the fur with your other hand so water goes to the skin. Spray against the grain.</li>
+        <li>No sprayer? Pour cups of water while you work the coat open with your fingers.</li>
+        <li>Keep her head tilted slightly up so water runs back, not into the ears. Wet her face with a damp cloth or your hand.</li>
+      </ol>
+    </div>
+    <div class="block">
+      <h4 class="sub">Tips</h4>
+      <ul class="tips">
+        <li><span class="tag t-key">Key</span><span>Check the skin with your fingers in the thickest spots: back, britches, chest and the ruff around her neck.</span></li>
+        <li><span class="tag t-helps">Helps</span><span>A loose cotton ball in each ear keeps most water out. Remember to take them out later.</span></li>
+        <li><span class="tag t-helps">Helps</span><span>A hand resting on top of her head, or gently holding an ear base, usually stops a shake.</span></li>
+        <li><span class="tag t-bonus">Bonus</span><span>Running your fingers against the grain while you spray opens the coat and cuts soak time.</span></li>
+      </ul>
+    </div>
+    <div class="avoid"><h4>Avoid</h4><p>Hot water. Spraying straight into her face or ears.</p></div>
+    <div class="step-actions"><button type="button" class="done-btn">Done, open next step</button></div>
+  </div>
+</details>
+
+<details class="step" id="s7">
+  <summary>
+    <span class="num">7</span>
+    <span class="sum-main"><span class="sum-title">Shampoo twice</span><span class="sum-goal">A quick first wash to break the grime, a thorough second wash to clean.</span></span>
+    <span class="sum-meta"><span class="prio p-crit">Never skip</span><span class="time">10–15 min</span></span>
+    <span class="chev" aria-hidden="true"></span>
+  </summary>
+  <div class="step-body">
+    <p class="why"><strong>Why it matters.</strong> The first wash breaks up oil and dirt. The second one actually cleans the skin and undercoat. A clean coat lets go of undercoat far more easily in the blowout. Shampooing is Never skip. The second wash is Worth it, so drop it if she's only lightly dirty.</p>
+    <div class="timecheck">
+      <div class="tc tc-little"><h4>Too little</h4><p>One quick lather on a dirty dog leaves oily undercoat that clumps and won't blow out.</p></div>
+      <div class="tc tc-much"><h4>Too much</h4><p>Long scrubbing sessions. The second wash needs 3 to 5 minutes of contact, or whatever the bottle says.</p></div>
+      <div class="tc tc-move"><h4>Move on when</h4><p>The second wash lathers easily all over. Thin or no suds means the coat is still dirty.</p></div>
+    </div>
+    <div class="block">
+      <h4 class="sub">How to do it</h4>
+      <ol class="how">
+        <li><strong>Dilute.</strong> About 1 part shampoo to 10 parts water in a bottle, unless the label gives a ratio. Shake it.</li>
+        <li>Pour a line down her back, then the sides, chest, belly, legs, tail and feet.</li>
+        <li>Scrub with your fingertips, not nails, in small circles at the skin, pushing against the grain.</li>
+        <li><strong>First wash:</strong> quick, then a quick rinse.</li>
+        <li><strong>Second wash:</strong> thorough. Let it sit 3 to 5 minutes, or as the label says.</li>
+        <li><strong>Face:</strong> a damp cloth with a little diluted shampoo, wiping away from the eyes.</li>
+      </ol>
+    </div>
+    <div class="block">
+      <h4 class="sub">Tips</h4>
+      <ul class="tips">
+        <li><span class="tag t-key">Key</span><span>Diluted shampoo spreads through a thick coat and rinses out far more easily. Thick shampoo poured on her back stays in one spot.</span></li>
+        <li><span class="tag t-helps">Helps</span><span>Scrub extra on the britches, under the tail, between the toes, and the white chest and feet, which stain.</span></li>
+        <li><span class="tag t-bonus">Bonus</span><span>If your shampoo is a deshedding or medicated type, follow its contact time. It only works if it sits long enough.</span></li>
+      </ul>
+    </div>
+    <div class="avoid"><h4>Avoid</h4><p>Human shampoo, which has the wrong pH for dog skin. Suds in her eyes.</p></div>
+    <div class="step-actions"><button type="button" class="done-btn">Done, open next step</button></div>
+  </div>
+</details>
+
+<details class="step" id="s8">
+  <summary>
+    <span class="num">8</span>
+    <span class="sum-main"><span class="sum-title">Rinse until squeaky</span><span class="sum-goal">Get every trace of shampoo out of the undercoat.</span></span>
+    <span class="sum-meta"><span class="prio p-top">Biggest payoff</span><span class="time">10–15 min</span></span>
+    <span class="chev" aria-hidden="true"></span>
+  </summary>
+  <div class="step-body">
+    <p class="why"><strong>Why it matters.</strong> Leftover shampoo in the undercoat is the main cause of itching, flakes and hot spots after a home bath. It also leaves the coat dull and makes it collect dirt. This is the step people rush the most.</p>
+    <div class="timecheck">
+      <div class="tc tc-little"><h4>Too little</h4><p>Almost everyone under-rinses a thick coat. If in doubt, keep rinsing.</p></div>
+      <div class="tc tc-much"><h4>Too much</h4><p>You can't over-rinse. The only risk is her getting cold or bored, so keep the water lukewarm and talk to her.</p></div>
+      <div class="tc tc-move"><h4>Move on when</h4><p>Water squeezed from a handful of coat runs clear with no bubbles, and the fur feels squeaky, not slippery.</p></div>
+    </div>
+    <div class="block">
+      <h4 class="sub">How to do it</h4>
+      <ol class="how">
+        <li>Rinse the head first with a cloth or a gentle cup of water, so suds don't run into her eyes later.</li>
+        <li>Then the back and sides, letting water run down and off.</li>
+        <li>Then the legs and belly, and the feet last.</li>
+        <li>Press the nozzle into the coat and lift the fur, just like when wetting.</li>
+        <li>Squeeze handfuls of coat in the thick zones and look at the water that comes out.</li>
+      </ol>
+    </div>
+    <div class="block">
+      <h4 class="sub">Tips</h4>
+      <ul class="tips">
+        <li><span class="tag t-key">Key</span><span>Rinse about twice as long as you spent lathering.</span></li>
+        <li><span class="tag t-key">Key</span><span>Check the spots that trap soap: armpits, between the back legs, chest, under the tail, and between the toes.</span></li>
+        <li><span class="tag t-helps">Helps</span><span>Feel at the skin with your fingertips. Slippery means soap is still there.</span></li>
+      </ul>
+    </div>
+    <div class="avoid"><h4>Avoid</h4><p>Stopping when the outer coat looks clean. The undercoat holds suds long after.</p></div>
+    <div class="step-actions"><button type="button" class="done-btn">Done, open next step</button></div>
+  </div>
+</details>
+
+<details class="step" id="s9">
+  <summary>
+    <span class="num">9</span>
+    <span class="sum-main"><span class="sum-title">Condition and loosen</span><span class="sum-goal">Make the dead undercoat slippery so it slides out instead of snagging.</span></span>
+    <span class="sum-meta"><span class="prio p-worth">Worth it</span><span class="time">10 min</span></span>
+    <span class="chev" aria-hidden="true"></span>
+  </summary>
+  <div class="step-body">
+    <p class="why"><strong>Why it matters.</strong> Conditioner smooths the hair so dead undercoat slides out instead of snagging and breaking guard hairs. It also cuts static, which makes brushing much easier later.</p>
+    <div class="timecheck">
+      <div class="tc tc-little"><h4>Too little</h4><p>Without it, the blowout and brush-out take longer and the feathering tangles more.</p></div>
+      <div class="tc tc-much"><h4>Too much</h4><p>Hard brushing in the tub. Wet skin scrapes easily. A few gentle passes are enough here.</p></div>
+      <div class="tc tc-move"><h4>Move on when</h4><p>The conditioner has sat for its time, the heavy zones got a gentle pass, and it's rinsed out.</p></div>
+    </div>
+    <div class="block">
+      <h4 class="sub">How to do it</h4>
+      <ol class="how">
+        <li>Dilute the conditioner as the label says. Many work at a few parts water to 1 part conditioner.</li>
+        <li>Pour it on and work it down to the skin, especially the feathering, britches, ruff and tail.</li>
+        <li>Leave it 3 to 5 minutes, or as the label says.</li>
+        <li>While it sits, run the slicker gently through the britches, neck and chest. Wet clumps of undercoat will start coming out.</li>
+        <li>Rinse well, the same way as step 8.</li>
+      </ol>
+    </div>
+    <div class="block">
+      <h4 class="sub">Tips</h4>
+      <ul class="tips">
+        <li><span class="tag t-key">Key</span><span>Rinse until the coat no longer feels slimy, unless the label says it's a leave-in.</span></li>
+        <li><span class="tag t-helps">Helps</span><span>Scoop clumps of fur out of the tub as you go so the drain doesn't clog.</span></li>
+        <li><span class="tag t-bonus">Bonus</span><span>If she's had enough, skip the in-tub brushing. The blowout does most of this work anyway.</span></li>
+      </ul>
+    </div>
+    <div class="avoid"><h4>Avoid</h4><p>Heavy, oily conditioners. They weigh the coat down and attract dirt.</p></div>
+    <div class="step-actions"><button type="button" class="done-btn">Done, open next step</button></div>
+  </div>
+</details>
+
+<details class="step" id="s10">
+  <summary>
+    <span class="num">10</span>
+    <span class="sum-main"><span class="sum-title">Squeeze and towel</span><span class="sum-goal">Get the drips out so the dryer does less work.</span></span>
+    <span class="sum-meta"><span class="prio p-worth">Worth it</span><span class="time">5 min</span></span>
+    <span class="chev" aria-hidden="true"></span>
+  </summary>
+  <div class="step-body">
+    <p class="why"><strong>Why it matters.</strong> Every bit of water you remove now is less time under the loud dryer.</p>
+    <div class="timecheck">
+      <div class="tc tc-little"><h4>Too little</h4><p>She's still dripping, and the start of the blowout turns into a long spray session.</p></div>
+      <div class="tc tc-much"><h4>Too much</h4><p>You can't towel a thick coat dry. Get the drips out and move to the dryer.</p></div>
+      <div class="tc tc-move"><h4>Move on when</h4><p>She's no longer dripping.</p></div>
+    </div>
+    <div class="block">
+      <h4 class="sub">How to do it</h4>
+      <ol class="how">
+        <li>Squeeze water down her legs, tail, ears and feathering with your hands.</li>
+        <li>Let her shake, and step back.</li>
+        <li>Press and squeeze the towel into the coat. Don't rub.</li>
+        <li>Dry the inside of the ear flaps with a corner of the towel. Take out the cotton balls.</li>
+        <li>Wrap her in the towel to walk her to the drying spot.</li>
+      </ol>
+    </div>
+    <div class="block">
+      <h4 class="sub">Tips</h4>
+      <ul class="tips">
+        <li><span class="tag t-key">Key</span><span>Blot, don't rub. Rubbing tangles long fur and the feathering.</span></li>
+        <li><span class="tag t-helps">Helps</span><span>Wring the towel out often. A second towel helps a lot.</span></li>
+        <li><span class="tag t-bonus">Bonus</span><span>Say "shake" every time she shakes. Many dogs learn it as a cue, which is handy at the end of every bath.</span></li>
+      </ul>
+    </div>
+    <div class="avoid"><h4>Avoid</h4><p>Cotton swabs in the ears. They can damage the ear canal.</p></div>
+    <div class="step-actions"><button type="button" class="done-btn">Done, open next step</button></div>
+  </div>
+</details>
+
+<div class="phase"><h3>Blowout and brush-out</h3><span class="mono">about 70–140 min</span></div>
+
+<details class="step" id="s11">
+  <summary>
+    <span class="num">11</span>
+    <span class="sum-main"><span class="sum-title">High-velocity blowout</span><span class="sum-goal">Blast loose undercoat out from the skin and dry her completely.</span></span>
+    <span class="sum-meta"><span class="prio p-top">Biggest payoff</span><span class="time">30–60 min</span></span>
+    <span class="chev" aria-hidden="true"></span>
+  </summary>
+  <div class="step-body">
+    <p class="why"><strong>Why it matters.</strong> This is the single most important step. The air pushes water off and blows dead undercoat out from the skin, and it removes more than any brush can. It's also what dries the undercoat fully, which prevents hot spots.</p>
+    <div class="timecheck">
+      <div class="tc tc-little"><h4>Too little</h4><p>The outer coat dries fast and fools you. A damp undercoat against the skin breeds bacteria and causes hot spots.</p></div>
+      <div class="tc tc-much"><h4>Too much</h4><p>An hour with no breaks can overheat her. Take breaks. If she's done, finish the body and towel the head.</p></div>
+      <div class="tc tc-move"><h4>Move on when</h4><p>She's dry to the skin everywhere, and blowing any spot sends up little or no loose fur.</p></div>
+    </div>
+    <div class="block">
+      <h4 class="sub">How to do it</h4>
+      <ol class="how">
+        <li class="part">Part A: get the water off</li>
+        <li>Set the heat to low or off. Most high-velocity dryers warm the air from the motor alone.</li>
+        <li>Start at the rump with the nozzle about a foot away, and push water off in sheets, back and down.</li>
+        <li>Work forward and down until she stops dripping.</li>
+        <li class="part">Part B: blow out the undercoat</li>
+        <li>Move in to a few inches from the coat. Aim the nozzle straight at the skin so the hair parts in a circle and you see skin in the middle.</li>
+        <li>Hold it still and move slowly, in rows, like mowing a lawn.</li>
+        <li>Stay on each spot until you see dry skin in the middle of the circle and fur stops flying out. Then move on.</li>
+        <li><strong>Order:</strong> back legs, rump, back, sides, belly, chest, front legs, neck. For the tail, hold the tip and blow from the base outward.</li>
+        <li><strong>Head last:</strong> lowest speed, no narrow nozzle, aimed from behind the ears toward her tail. Cup her ear flap closed with your hand.</li>
+        <li>Every few minutes, stop and slicker out the clumps the air has loosened, then keep going.</li>
+        <li>Finish by checking the slow-drying spots with your fingers: armpits, groin, behind the ears, under the collar, the fold where the back leg meets the body, and the base of the tail.</li>
+      </ol>
+    </div>
+    <div class="block">
+      <h4 class="sub">Tips</h4>
+      <ul class="tips">
+        <li><span class="tag t-key">Key</span><span>Hold the nozzle still. Waving it back and forth whips long hair into knots.</span></li>
+        <li><span class="tag t-key">Key</span><span>Dry to the skin. Fingertips decide when she's dry, not eyes.</span></li>
+        <li><span class="tag t-key">Key</span><span>Never blow into her face, eyes, ears, nose or genitals.</span></li>
+        <li><span class="tag t-helps">Helps</span><span>On long feathering, ears and tail, pull back further and blow in the direction the hair grows.</span></li>
+        <li><span class="tag t-helps">Helps</span><span>Watch for overheating: heavy panting, a wide flat tongue, restlessness. Stop, offer water, and switch to cool air.</span></li>
+        <li><span class="tag t-helps">Helps</span><span>Wear the mask. Undercoat floats everywhere and you'll be breathing it for half an hour.</span></li>
+        <li><span class="tag t-bonus">Bonus</span><span>The pile of fur often looks like enough to build a second dog. That's normal and means it's working.</span></li>
+      </ul>
+    </div>
+    <div class="avoid"><h4>Avoid</h4><p>Hot settings at close range. Leaving her damp "to air-dry the rest". Waving the nozzle around.</p></div>
+    <div class="step-actions"><button type="button" class="done-btn">Done, open next step</button></div>
+  </div>
+</details>
+
+<details class="step" id="s12">
+  <summary>
+    <span class="num">12</span>
+    <span class="sum-main"><span class="sum-title">Line brush</span><span class="sum-goal">Brush layer by layer from the skin out, so nothing stays packed underneath.</span></span>
+    <span class="sum-meta"><span class="prio p-top">Biggest payoff</span><span class="time">30–60 min</span></span>
+    <span class="chev" aria-hidden="true"></span>
+  </summary>
+  <div class="step-body">
+    <p class="why"><strong>Why it matters.</strong> The blowout loosens the undercoat, but a lot of it stays in the coat. Line brushing is the only reliable way to reach the layer against the skin. Brushing just the top is why most home-groomed double coats mat underneath.</p>
+    <div class="timecheck">
+      <div class="tc tc-little"><h4>Too little</h4><p>Brushing only the surface. She looks fluffy, but the undercoat underneath stays packed and mats.</p></div>
+      <div class="tc tc-much"><h4>Too much</h4><p>Going over the same patch again and again. That causes brush burn, a red rash that shows up hours later. When the brush comes out nearly empty, move on.</p></div>
+      <div class="tc tc-move"><h4>Move on when</h4><p>Every section gives a nearly empty brush, and the comb passes in step 13.</p></div>
+    </div>
+    <div class="block">
+      <h4 class="sub">How to do it</h4>
+      <ol class="how">
+        <li><strong>Grip.</strong> Hold the slicker lightly in your fingertips. Keep your wrist firm and move from the elbow and shoulder. A flicking wrist scrapes the skin with the edge pins.</li>
+        <li><strong>Stroke.</strong> Use "pat and pull". Pat the brush flat into the coat, then pull it out from base to tip in the direction the hair grows.</li>
+        <li>Start low on a back leg. Hold the hair above up with your flat hand so you see a line of skin.</li>
+        <li>Brush the strip just below that line, from the skin out, until it brushes through smoothly.</li>
+        <li>Let down the next half inch to an inch of hair and repeat. Work up the leg in rows.</li>
+        <li>Continue to the rump, then each side in rows from belly to spine, then chest, front legs, neck and ruff, and tail.</li>
+        <li>Have her lie on her side for the belly, armpits and inner legs.</li>
+        <li>Clean the pins whenever the brush fills up.</li>
+      </ol>
+    </div>
+    <div class="block">
+      <h4 class="sub">Tips</h4>
+      <ul class="tips">
+        <li><span class="tag t-key">Key</span><span>Brush the hair, not the skin. Light pressure. Let the pins do the work.</span></li>
+        <li><span class="tag t-key">Key</span><span>Give extra time to the mat zones: behind the ears, collar area, armpits, britches and tail base.</span></li>
+        <li><span class="tag t-helps">Helps</span><span>If the skin turns pink, stop on that spot and move somewhere else.</span></li>
+        <li><span class="tag t-helps">Helps</span><span>Break it up. Two 30-minute sessions beat one cranky hour.</span></li>
+        <li><span class="tag t-bonus">Bonus</span><span>Undercoat on a black dog often comes out grey or brown. That's normal.</span></li>
+      </ul>
+    </div>
+    <div class="avoid"><h4>Avoid</h4><p>Pressing hard. Scrubbing one spot over and over. Brushing against the grain at the skin.</p></div>
+    <div class="step-actions"><button type="button" class="done-btn">Done, open next step</button></div>
+  </div>
+</details>
+
+<details class="step" id="s13">
+  <summary>
+    <span class="num">13</span>
+    <span class="sum-main"><span class="sum-title">Comb check</span><span class="sum-goal">Prove the coat is clear: the comb must glide from skin to tip.</span></span>
+    <span class="sum-meta"><span class="prio p-crit">Never skip</span><span class="time">10–20 min</span></span>
+    <span class="chev" aria-hidden="true"></span>
+  </summary>
+  <div class="step-body">
+    <p class="why"><strong>Why it matters.</strong> The comb is your quality test. A slicker can glide over a hidden tangle, but a comb can't. Groomers don't call a coat done until the comb passes.</p>
+    <div class="timecheck">
+      <div class="tc tc-little"><h4>Too little</h4><p>Skipping it leaves hidden knots that turn into mats within a week.</p></div>
+      <div class="tc tc-much"><h4>Too much</h4><p>Chasing perfection on the first deshed of a heavy shed. If one stubborn area keeps catching, slicker it once more and revisit it at the next brushing.</p></div>
+      <div class="tc tc-move"><h4>Move on when</h4><p>The fine teeth glide through the feathering and the coarse teeth glide everywhere else.</p></div>
+    </div>
+    <div class="block">
+      <h4 class="sub">How to do it</h4>
+      <ol class="how">
+        <li>Coarse end first. Push the comb down to the skin and pull it out along the direction of growth.</li>
+        <li>If it snags, go back to the slicker on that spot, or tease the knot with the end of the comb.</li>
+        <li>Then use the fine end through the feathering: ears, chest, legs, britches and tail.</li>
+        <li>Behind the ears, hold the ear flap so the comb doesn't scrape the thin skin there.</li>
+      </ol>
+    </div>
+    <div class="block">
+      <h4 class="sub">Tips</h4>
+      <ul class="tips">
+        <li><span class="tag t-key">Key</span><span>Skin to tip, every time. Combing only the top layer tests nothing.</span></li>
+        <li><span class="tag t-helps">Helps</span><span>Move the comb in short sections, not long sweeps. Snags are easier to find and gentler to work out.</span></li>
+      </ul>
+    </div>
+    <div class="avoid"><h4>Avoid</h4><p>Ripping through a snag. Back up and work it out from the tips.</p></div>
+    <div class="step-actions"><button type="button" class="done-btn">Done, open next step</button></div>
+  </div>
+</details>
+
+<div class="phase"><h3>Finishing</h3><span class="mono">about 35–50 min</span></div>
+
+<details class="step" id="s14">
+  <summary>
+    <span class="num">14</span>
+    <span class="sum-main"><span class="sum-title">Ears, eyes and skin</span><span class="sum-goal">Dry the ears and take a last look at the skin.</span></span>
+    <span class="sum-meta"><span class="prio p-worth">Worth it</span><span class="time">5 min</span></span>
+    <span class="chev" aria-hidden="true"></span>
+  </summary>
+  <div class="step-body">
+    <p class="why"><strong>Why it matters.</strong> Water left in the ear canal changes the ear's balance and lets yeast and bacteria grow, which can lead to an ear infection. A last look at the skin catches brush burn or a spot you missed.</p>
+    <div class="timecheck">
+      <div class="tc tc-little"><h4>Too little</h4><p>Damp ears are a common cause of ear infections after baths.</p></div>
+      <div class="tc tc-much"><h4>Too much</h4><p>Digging into the ear. Wipe only what you can see.</p></div>
+      <div class="tc tc-move"><h4>Move on when</h4><p>The ear flaps and the opening of the canal are dry, and the skin looks calm.</p></div>
+    </div>
+    <div class="block">
+      <h4 class="sub">How to do it</h4>
+      <ol class="how">
+        <li>Dry the inside of each ear flap and the opening with a towel corner or a cotton ball.</li>
+        <li>Wipe any crust from the corners of the eyes with a damp cloth.</li>
+        <li>Part the coat in a few places and look for pink or scraped skin.</li>
+      </ol>
+    </div>
+    <div class="block">
+      <h4 class="sub">Tips</h4>
+      <ul class="tips">
+        <li><span class="tag t-key">Key</span><span>Never use cotton swabs in the ear canal.</span></li>
+        <li><span class="tag t-helps">Helps</span><span>Clean the ears monthly with a vet-approved ear cleaner. It isn't in your kit, but it's cheap and has drying agents.</span></li>
+        <li><span class="tag t-bonus">Bonus</span><span>Redness, a bad smell or head shaking means a vet visit, not more cleaning.</span></li>
+      </ul>
+    </div>
+    <div class="avoid"><h4>Avoid</h4><p>Putting oil or water into the ear canal.</p></div>
+    <div class="step-actions"><button type="button" class="done-btn">Done, open next step</button></div>
+  </div>
+</details>
+
+<details class="step" id="s15">
+  <summary>
+    <span class="num">15</span>
+    <span class="sum-main"><span class="sum-title">Scissor tidy</span><span class="sum-goal">Paw pads, foot outline, hocks, sanitary area and ear edges. Nothing else.</span></span>
+    <span class="sum-meta"><span class="prio p-opt">Optional</span><span class="time">15–30 min</span></span>
+    <span class="chev" aria-hidden="true"></span>
+  </summary>
+  <div class="step-body">
+    <p class="why"><strong>Why it matters.</strong> Long fur between the pads makes her slip on floors and traps mud, ice and burrs, so trimming the pads is Worth it. Everything else here is tidiness. The body coat and feathering are not for cutting.</p>
+    <div class="timecheck">
+      <div class="tc tc-little"><h4>Too little</h4><p>Skipping it is fine, except for the pads, which affect her grip.</p></div>
+      <div class="tc tc-much"><h4>Too much</h4><p>Shaping the body or feathering. That's where home grooming goes wrong. Stick to the five areas below.</p></div>
+      <div class="tc tc-move"><h4>Move on when</h4><p>The pads are level, the feet look round and tidy, and nothing hangs in her way.</p></div>
+    </div>
+    <div class="block">
+      <h4 class="sub">How to do it</h4>
+      <ol class="how">
+        <li class="part">Paw pads (worth it)</li>
+        <li>Hold the paw up firmly, like for a nail trim, and spread the toes gently.</li>
+        <li>Lay the scissors flat against the pads and trim the fur level with the pads.</li>
+        <li>Keep the tips out of the gaps between the pads.</li>
+        <li class="part">Foot outline</li>
+        <li>Put the paw down and comb the fur on the foot downward.</li>
+        <li>Trim around the edge of the foot so no fur drags over the toes.</li>
+        <li>Brush the fur on top of the foot up, then snip only the tips that stick out above the toes.</li>
+        <li class="part">Hocks, the back of the rear legs below the heel</li>
+        <li>Comb the fur straight out. Trim it to a neat line, leaving about an inch, with the scissor tips pointing down and away.</li>
+        <li class="part">Sanitary area, only if fur gets soiled</li>
+        <li>Comb under the tail and around the genitals. Take small snips with the comb as a guard between the skin and the blade. Leave some length.</li>
+        <li class="part">Ear edges</li>
+        <li>Run a finger under the ear flap along its edge so you feel where the skin ends. Snip only the wispy hairs past your finger.</li>
+      </ol>
+    </div>
+    <div class="block">
+      <h4 class="sub">Tips</h4>
+      <ul class="tips">
+        <li><span class="tag t-key">Key</span><span>Scissor points always face away from her body. Only cut hair you can see clearly. If she moves, stop.</span></li>
+        <li><span class="tag t-helps">Helps</span><span>Cut on a fully dry coat. Wet hair hangs longer, so you'll cut off too much.</span></li>
+        <li><span class="tag t-helps">Helps</span><span>Good light and small snips. You can always take more off.</span></li>
+        <li><span class="tag t-bonus">Bonus</span><span>If you buy one more tool, make it rounded-tip grooming scissors. They're much safer around paws and ears.</span></li>
+      </ul>
+    </div>
+    <div class="avoid"><h4>Avoid</h4><p>Cutting the body coat or thinning the feathering. Cutting between the pads, where the skin webbing is thin.</p></div>
+    <div class="step-actions"><button type="button" class="done-btn">Done, open next step</button></div>
+  </div>
+</details>
+
+<details class="step" id="s16">
+  <summary>
+    <span class="num">16</span>
+    <span class="sum-main"><span class="sum-title">Coconut oil finish</span><span class="sum-goal">A tiny amount on the feathering ends and dry pads.</span></span>
+    <span class="sum-meta"><span class="prio p-opt">Optional</span><span class="time">5 min</span></span>
+    <span class="chev" aria-hidden="true"></span>
+  </summary>
+  <div class="step-body">
+    <p class="why"><strong>Why it matters.</strong> A little coconut oil tames static and frizz in the feathering and soothes dry pads. It's a finishing touch, not a coat treatment.</p>
+    <div class="timecheck">
+      <div class="tc tc-little"><h4>Too little</h4><p>Nothing is lost. Skip it if she doesn't need it.</p></div>
+      <div class="tc tc-much"><h4>Too much</h4><p>More is worse. It clogs pores, makes the coat greasy, attracts dirt and invites licking.</p></div>
+      <div class="tc tc-move"><h4>Move on when</h4><p>You've used about a pea-sized amount on the ends.</p></div>
+    </div>
+    <div class="block">
+      <h4 class="sub">How to do it</h4>
+      <ol class="how">
+        <li>Melt a pea-sized amount between your palms.</li>
+        <li>Stroke it lightly over the ends of the feathering and tail.</li>
+        <li>Rub a thin layer into dry or cracked pads, especially after trimming.</li>
+        <li>Put a tiny dab on dry elbows or a dry nose.</li>
+      </ol>
+    </div>
+    <div class="block">
+      <h4 class="sub">Tips</h4>
+      <ul class="tips">
+        <li><span class="tag t-key">Key</span><span>Thin layer, once or twice a week at most.</span></li>
+        <li><span class="tag t-helps">Helps</span><span>During weekly brushing, rub a little into a tangle to make it easier to tease out.</span></li>
+        <li><span class="tag t-bonus">Bonus</span><span>Feeding coconut oil is a question for your vet. It can cause weight gain and has been linked to pancreatitis. For coat and shedding, vets more often suggest an omega-3 fish oil.</span></li>
+      </ul>
+    </div>
+    <div class="avoid"><h4>Avoid</h4><p>Rubbing it all over the body coat and skin.</p></div>
+    <div class="step-actions"><button type="button" class="done-btn">Done, open next step</button></div>
+  </div>
+</details>
+
+<details class="step" id="s17">
+  <summary>
+    <span class="num">17</span>
+    <span class="sum-main"><span class="sum-title">Clean up and tool care</span><span class="sum-goal">Clean tools, clear the dryer filter, rescue the drain.</span></span>
+    <span class="sum-meta"><span class="prio p-worth">Worth it</span><span class="time">10 min</span></span>
+    <span class="chev" aria-hidden="true"></span>
+  </summary>
+  <div class="step-body">
+    <p class="why"><strong>Why it matters.</strong> Clean tools work better. A clogged dryer filter loses power and can overheat the motor. Wet metal tools rust.</p>
+    <div class="timecheck">
+      <div class="tc tc-little"><h4>Too little</h4><p>Next time the slicker is packed with old fur and the dryer is weaker.</p></div>
+      <div class="tc tc-much"><h4>Too much</h4><p>A quick wash and dry is enough.</p></div>
+      <div class="tc tc-move"><h4>Move on when</h4><p>The tools are clean and dry and the dryer filter is clear.</p></div>
+    </div>
+    <div class="block">
+      <h4 class="sub">How to do it</h4>
+      <ol class="how">
+        <li>Pull the fur out of the slicker. Wash the slicker and comb in warm soapy water, then dry them fully.</li>
+        <li>Wipe and dry the scissors. Keep them for the dog only, since cutting paper dulls them.</li>
+        <li>Clean the dryer's air intake filter.</li>
+        <li>Clear the drain and wash the towels.</li>
+      </ol>
+    </div>
+    <div class="block">
+      <h4 class="sub">Tips</h4>
+      <ul class="tips">
+        <li><span class="tag t-key">Key</span><span>Check the dryer filter after every blowout. Undercoat clogs it fast.</span></li>
+        <li><span class="tag t-bonus">Bonus</span><span>Give her a big reward and a walk. Ending on a good note makes the next groom easier.</span></li>
+      </ul>
+    </div>
+    <div class="step-actions"><button type="button" class="done-btn">Done</button></div>
+  </div>
+</details>
+
+</div>
+
+<section aria-labelledby="h-after">
+  <h2 id="h-after">After bath day</h2>
+
+  <details class="faq">
+    <summary>Maintenance schedule<span class="chev" aria-hidden="true"></span></summary>
+    <div class="faq-body">
+      <div class="sched-wrap">
+        <table class="sched">
+          <thead><tr><th>Task</th><th>How often</th><th>Priority</th></tr></thead>
+          <tbody>
+            <tr><td>Line brush the mat zones, 10 to 15 minutes</td><td>2 to 3 times a week</td><td><span class="prio p-crit">Never skip</span></td></tr>
+            <tr><td>Full line brush plus comb check</td><td>Weekly. Daily during the spring and fall shed.</td><td><span class="prio p-crit">Never skip</span></td></tr>
+            <tr><td>Dry blowout without a bath, then line brush</td><td>Every 1 to 2 weeks during the shed</td><td><span class="prio p-worth">Worth it</span></td></tr>
+            <tr><td>Full bath-day groom (this guide)</td><td>Every 6 to 8 weeks, when dirty, and at the start of each seasonal shed</td><td><span class="prio p-worth">Worth it</span></td></tr>
+            <tr><td>Paw pad trim</td><td>Every 4 to 6 weeks</td><td><span class="prio p-worth">Worth it</span></td></tr>
+            <tr><td>Ear check, with cleaning monthly</td><td>Weekly</td><td><span class="prio p-worth">Worth it</span></td></tr>
+            <tr><td>Nail trim (needs clippers or a grinder)</td><td>Every 2 to 4 weeks</td><td><span class="prio p-worth">Worth it</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="small">Bathing more often than needed strips the coat's natural oils. Between baths, brushing and a dry blowout do the deshedding.</p>
+    </div>
+  </details>
+
+  <details class="faq">
+    <summary>She panics at the dryer<span class="chev" aria-hidden="true"></span></summary>
+    <div class="faq-body">
+      <ul>
+        <li>Stop and go back to step 1. Spread the training over more days.</li>
+        <li>Drop to the lowest speed, move the nozzle further away, and start at her rump.</li>
+        <li>Use cotton balls in the ears and a towel snood, plus a lick mat.</li>
+        <li>Towel and air-dry the head and do only the body with the dryer.</li>
+        <li>If her anxiety is severe, ask your vet. Some dogs need help with fear, and a groomer with a quiet dryer can bridge the gap.</li>
+      </ul>
+    </div>
+  </details>
+
+  <details class="faq">
+    <summary>Red rash or pink skin after brushing<span class="chev" aria-hidden="true"></span></summary>
+    <div class="faq-body">
+      <p>That's usually brush burn from too much pressure or too many strokes on one spot. Leave the area alone for a few days. Next time, lighten your grip, keep your wrist firm, and move on when the brush comes out empty. If it oozes, spreads, or she won't stop licking it, call your vet.</p>
+    </div>
+  </details>
+
+  <details class="faq">
+    <summary>A hot spot showed up after the bath<span class="chev" aria-hidden="true"></span></summary>
+    <div class="faq-body">
+      <p>Hot spots are red, wet, sore patches that can grow fast. After a bath they usually mean the undercoat stayed damp against the skin. Keep her from licking or scratching it and call your vet. Next time, check the slow-drying spots with your fingertips: armpits, groin, behind the ears, under the collar, and where the back leg meets the body.</p>
+    </div>
+  </details>
+
+  <details class="faq">
+    <summary>Flakes or itching after the bath<span class="chev" aria-hidden="true"></span></summary>
+    <div class="faq-body">
+      <p>Most often this is shampoo left in the undercoat. Next bath, dilute the shampoo and rinse twice as long as you lathered. If it keeps happening with good rinsing, ask your vet about dry skin. An omega-3 fish oil is a common vet suggestion for skin and coat.</p>
+    </div>
+  </details>
+
+  <details class="faq">
+    <summary>Her coat smells musty a day later<span class="chev" aria-hidden="true"></span></summary>
+    <div class="faq-body">
+      <p>The undercoat didn't dry fully, or shampoo was left in it. Run the dryer over her again, checking at the skin. Next time, dry longer in the thick zones.</p>
+    </div>
+  </details>
+
+  <details class="faq">
+    <summary>She's still shedding a lot a week later<span class="chev" aria-hidden="true"></span></summary>
+    <div class="faq-body">
+      <p>During the spring and fall shed, that's normal. New undercoat keeps loosening for weeks. Keep up the line brushing and add a dry blowout every week or two. Bald patches, broken hair, sores, or heavy shedding outside the usual seasons are worth a vet visit.</p>
+    </div>
+  </details>
+
+  <details class="faq">
+    <summary>When to call a groomer or vet<span class="chev" aria-hidden="true"></span></summary>
+    <div class="faq-body">
+      <ul>
+        <li><strong>Groomer:</strong> large, tight mats against the skin, or a dog too stressed for the dryer. A professional blowout at the start of each shed plus your weekly brushing is a good balance of cost and results.</li>
+        <li><strong>Vet:</strong> hot spots, open sores, lumps, bald patches, ear redness or smell, or skin that stays itchy after good rinsing.</li>
+      </ul>
+    </div>
+  </details>
+</section>
+
+<section class="sources" aria-labelledby="h-src">
+  <h2 id="h-src">Sources</h2>
+  <ol>
+    <li><a href="https://www.groomertogroomer.com/double-coated-dogs-which-comes-first-the-brush-or-the-bath/">Groomer to Groomer: Double coated dogs, which comes first, the brush or the bath?</a></li>
+    <li><a href="https://www.groomertogroomer.com/using-the-force-high-velocity-dryers-their-role-in-grooming/">Groomer to Groomer: High velocity dryers and their role in grooming</a></li>
+    <li><a href="https://www.groomersu.com/blog/how-to-groom-a-bernese-mountain-dog">Groomers U: How to groom a Bernese Mountain Dog</a></li>
+    <li><a href="https://pro.prideandgroom.com/blogs/dog-grooming/bernese-mountain-dog-grooming">Pride+Groom Pro: Bernese Mountain Dog grooming</a></li>
+    <li><a href="https://www.akc.org/expert-advice/health/how-to-groom-a-double-coated-dog/">AKC: How to groom a double-coated dog</a></li>
+    <li><a href="https://www.riverviewgrooming.com/post/how-to-use-a-slicker-brush-like-a-pro-a-step-by-step-guide-for-pet-parents">Riverview Grooming: How to use a slicker brush like a pro</a></li>
+    <li><a href="https://paragonpetschool.com/2020/01/29/melissa-talks-about-slicker-brushes/">Paragon School of Pet Grooming: Slicker brushes</a></li>
+    <li><a href="https://www.bubblypaws.com/barkblog/how-do-you-bathe-and-dry-a-double-coated-dog">Bubbly Paws: Bathing and drying a double-coated dog</a></li>
+    <li><a href="https://www.bubblypaws.com/barkblog/4-tips-for-getting-your-dog-comfortable-with-a-dog-dryer">Bubbly Paws: Getting your dog comfortable with a dryer</a></li>
+    <li><a href="https://www.allthingschihuahua.com/desensitization-to-velocity-dryers/">All Things Chihuahua: Desensitization to velocity dryers</a></li>
+    <li><a href="https://christiesdirect.com/blog/-magic-in-the-mix-the-art-of-diluting-dog-shampoo-.html">Chris Christensen: Diluting dog shampoo</a></li>
+    <li><a href="https://www.dailypaws.com/dogs-puppies/dog-grooming/how-to-bathe-a-dog">Daily Paws: How to bathe a dog, a pro groomer's tips</a></li>
+    <li><a href="https://k-9dryers.com/blogs/k9-dryer/how-do-groomers-deshed-dogs">K-9 Dryers: How groomers deshed dogs</a></li>
+    <li><a href="https://www.jirpet.com/blogs/blog/how-to-dry-a-double-coated-dog">Jirpet: How to dry a double-coated dog properly</a></li>
+    <li><a href="https://www.adoptapet.com/blog/health/dry-off-dog-after-bath-hot-spots">Adopt a Pet: Drying after a bath and hot spots</a></li>
+    <li><a href="https://wahlusa.com/expert-advice/grooming-pets/mat-removal">Wahl: Tricks to get mats out of dog hair</a></li>
+    <li><a href="https://www.petplace.com/article/dogs/pet-care/safe-ways-to-remove-mats-from-your-dog">PetPlace: Safe ways to remove mats</a></li>
+    <li><a href="https://www.petedge.com/blog/trimming-around-the-paw-pads/">PetEdge: Trimming around the paw pads</a></li>
+    <li><a href="https://www.dogster.com/dog-health-care/how-to-trim-dog-paw-hair/">Dogster: How to trim dog paw hair</a></li>
+    <li><a href="https://wagwalking.com/grooming/bathe-a-dog-without-getting-water-in-ears">Wag!: Bathing without getting water in the ears</a></li>
+    <li><a href="https://www.akc.org/expert-advice/health/coconut-oil-dogs/">AKC: Coconut oil for dogs</a></li>
+    <li><a href="https://www.dailypaws.com/dogs-puppies/health-care/coconut-oil-for-dogs">Daily Paws: Coconut oil is safe only in small amounts</a></li>
+  </ol>
+</section>
+
+<footer>
+  <p>This guide is general grooming advice. Your vet knows your dog best, so check with them about skin problems, supplements, or anything that worries you.</p>
+</footer>
+</div>
+
+<script>
+(function drawCoat() {
+  var svg = document.getElementById('coat');
+  if (!svg) return;
+  var skinY = 150, out = '';
+  for (var x = 4; x < 640; x += 6) {
+    var h = 26 + ((x * 37) % 13);
+    out += '<path class="c-under" d="M' + x + ' ' + skinY + ' q 6 ' + (-h / 3) + ' 0 ' + (-h * 2 / 3) + ' q -6 ' + (-h / 6) + ' 2 ' + (-h / 3) + '"/>';
+  }
+  for (var g = 8; g < 640; g += 20) {
+    var gh = 108 + ((g * 13) % 27);
+    out += '<path class="c-guard" d="M' + g + ' ' + skinY + ' q 6 ' + (-gh / 2) + ' 36 ' + (-gh) + '"/>';
+  }
+  svg.insertAdjacentHTML('beforeend', out);
+})();
+
+(function steps() {
+  var KEY = 'berner-coat-blowout-done';
+  var stepEls = Array.prototype.slice.call(document.querySelectorAll('details.step'));
+  var allDetails = Array.prototype.slice.call(document.querySelectorAll('details.step, details.faq'));
+  var label = document.getElementById('progress-label');
+  var bar = document.getElementById('progress-bar');
+  var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  var done = new Set();
+  try { done = new Set(JSON.parse(localStorage.getItem(KEY) || '[]')); } catch (e) { done = new Set(); }
+
+  function save() {
+    try { localStorage.setItem(KEY, JSON.stringify(Array.from(done))); } catch (e) {}
+  }
+
+  function render() {
+    stepEls.forEach(function (el) {
+      var isDone = done.has(el.id);
+      el.classList.toggle('is-done', isDone);
+      var btn = el.querySelector('.done-btn');
+      if (!btn) return;
+      var isLast = el === stepEls[stepEls.length - 1];
+      btn.textContent = isDone ? 'Mark as not done' : (isLast ? 'Done' : 'Done, open next step');
+      btn.setAttribute('aria-pressed', String(isDone));
+    });
+    label.textContent = done.size + ' of ' + stepEls.length + ' steps done';
+    bar.style.width = (done.size / stepEls.length * 100) + '%';
+  }
+
+  stepEls.forEach(function (el, index) {
+    var btn = el.querySelector('.done-btn');
+    if (!btn) return;
+    btn.addEventListener('click', function () {
+      if (done.has(el.id)) {
+        done.delete(el.id);
+        save(); render();
+        return;
+      }
+      done.add(el.id);
+      save(); render();
+      el.open = false;
+      var next = stepEls[index + 1];
+      if (!next) return;
+      next.open = true;
+      next.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth', block: 'start' });
+    });
+  });
+
+  document.getElementById('expand-all').addEventListener('click', function () {
+    allDetails.forEach(function (d) { d.open = true; });
+  });
+  document.getElementById('collapse-all').addEventListener('click', function () {
+    allDetails.forEach(function (d) { d.open = false; });
+  });
+  document.getElementById('reset').addEventListener('click', function () {
+    done.clear(); save(); render();
+  });
+
+  document.querySelectorAll('table.map a').forEach(function (a) {
+    a.addEventListener('click', function () {
+      var target = document.getElementById(a.getAttribute('href').slice(1));
+      if (target && target.tagName === 'DETAILS') target.open = true;
+    });
+  });
+
+  var hash = location.hash.slice(1);
+  if (/^s\d+$/.test(hash)) {
+    var target = document.getElementById(hash);
+    if (target) target.open = true;
+  }
+
+  render();
+})();
+</script>
+
+</body></html>
